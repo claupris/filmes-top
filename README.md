@@ -9,10 +9,11 @@ yarn dev
 # como buildar o projeto 
 ```sh
 yarn build
-```
+```(
 # como fazer o deploy
-```sh
-npx vercel ./dist --prod
+```sh)
+vercel
+baixar o CLI da vercel prara fazer deploy automático (necessário conta na vercel)
 ```
 
 

@@ -1,24 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+//import { useState } from 'react'
+import { Dashboard } from "./pages/Dashboard";
+import { Movie } from "./pages/Movie";
+import { Search } from "./pages/Search";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from './components/header/Header';
+
+
 import './App.css'
 
+function Root() {
+  return (
+    <Routes>
+      <Route path="/" element={Dashboard()} />
+      <Route path="/movie" element={Movie()} />
+      <Route path="/search" element={Search()} />
+    </Routes>
+  );
+}
+
 function App() {
-  const [count, setCount] = useState(0)
+  //const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="App">
+        <Header/>
+        <div className="App-header">
+          <Router>
+            <Root />
+          </Router>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-    </>
   )
 }
+
 
 export default App
