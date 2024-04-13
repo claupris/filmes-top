@@ -1,35 +1,32 @@
 
 import { BiCameraMovie, BiSearchAlt2 } from 'react-icons/bi';
+import { BrowserRouter } from 'react-router-dom';
+
+import "./Header.css"
 
 const Header = () =>{
+    const search =  () =>{
+        return console.log("deu certo")
+    }
+
     return (
-        <header
-          style={{
-            backgroundColor: "#f4900c",
-            justifyContent: "space-between"
-          }}
-        >
-          <nav>
-            <ul style={{ listStyleType: "none", padding: 2 }}>
-              <li style={{ display: "inline", margin: "0 20px" }}>
-                <a
-                  href="/dashboard"
-                  style={{ textDecoration: "none", color: "white", fontSize: "19px" }}
-                >
-                  <BiCameraMovie /> Dashboard
-                </a>
-              </li>
-              <li style={{ display: "inline", margin: "0 20px" }}>
-                <form style={{ textDecoration: "none", color: "white", fontSize: "19px" }}>
-                    <input type='text' placeholder='Busca'/>
-                    <button type='submit'><BiSearchAlt2 /></button>
-                </form>
-              </li>
-              <li style={{ display: "inline", margin: "0 20px" }} role="menuitem">
-              </li>
-            </ul>
-          </nav>
-        </header>
+        <nav id="navbar">
+          <h2>
+            <BrowserRouter>
+              <BiCameraMovie /> Top Movies
+            </BrowserRouter>
+          </h2>
+          <form onSubmit={search}>
+            <input
+              type="text"
+              placeholder="Busque um filme"
+              onChange={() => ""}
+            />
+            <button type="submit">
+              <BiSearchAlt2 />
+            </button>
+          </form>
+        </nav>
       ); 
     };
     export default Header;
