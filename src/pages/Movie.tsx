@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom";
 
 export function Movie(){
     const Movie: React.FC = () => {
@@ -6,7 +7,7 @@ export function Movie(){
             <div>
             <p>Movie</p>
 
-            <a href="/"> dash</a>
+            <Link to="/">dash</Link>
             </div>
         );
     };

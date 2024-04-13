@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom";
 
 export function Search(){
     const Search: React.FC = () => {
@@ -6,7 +7,7 @@ export function Search(){
             <div>
             <p>Search</p>
 
-            <a href="/movie"> movie</a>
+            <Link to="/movie/1">movie</Link>
             </div>
         );
     };

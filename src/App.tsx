@@ -12,7 +12,7 @@ function Root() {
   return (
     <Routes>
       <Route path="/" element={Dashboard()} />
-      <Route path="/movie" element={Movie()} />
+      <Route path="/movie/:id" element={Movie()} />
       <Route path="/search" element={Search()} />
     </Routes>
   );
