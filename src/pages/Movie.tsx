@@ -1,16 +1,13 @@
-import React from "react"
 import { Link } from "react-router-dom";
 
-export function Movie(){
-    const Movie: React.FC = () => {
-        return (
-            <div>
-            <p>Movie</p>
+const Movie = () => {
+    return (
+        <div>
+        <p>Movie</p>
 
-            <Link to="/">dash</Link>
-            </div>
-        );
-    };
-
-    return <Movie></Movie>;
+        <Link to="/category">category</Link>
+        </div>
+    );
 }
+
+export default Movie;

@@ -1,16 +1,13 @@
-import React from "react"
 import { Link } from "react-router-dom";
 
-export function Search(){
-    const Search: React.FC = () => {
-        return (
-            <div>
-            <p>Search</p>
+const Search = () => {
+    return (
+        <div>
+        <p>Search</p>
 
-            <Link to="/movie/1">movie</Link>
-            </div>
-        );
-    };
-
-    return <Search></Search>;
+        <Link to="/movie/1">movie</Link>
+        </div>
+    );
 }
+
+export default Search;
