@@ -1,7 +1,5 @@
 import { useParams } from "react-router-dom";
 import { API } from "../lib/Api";
-import { BsFillFileEarmarkTextFill, BsGraphUp, BsHourglassSplit, BsWallet2 } from "react-icons/bs";
-import MovieCard from "../components/movieCard/MovieCard";
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import TranslateOutlinedIcon from '@mui/icons-material/TranslateOutlined';
 import StarOutlinedIcon from '@mui/icons-material/StarOutlined';
