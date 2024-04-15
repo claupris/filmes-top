@@ -6,15 +6,17 @@ const moviesWeekUrl = import.meta.env.VITE_API_WEEK;
 const apiKey = import.meta.env.VITE_API_KEY;
 const movieSearch = import.meta.env.VITE_SEARCH;
 const movieImage = import.meta.env.VITE_IMG;
-const genreList = import.meta.env.VITE_API_GENRE
+const genreList = import.meta.env.VITE_API_GENRE;
+const moviesList = import.meta.env.VITE_API_MOVIES;
 
 export const API = {
-    getMovies: () => {
+
+    getMovieId: (id: any) => {
 
         const [moviesData, setMovieData] = useState([]);
 
         useEffect(() => {
-            getCurrencyMoviesData(`${moviesUrl}popular?${apiKey}`)
+            getCurrencyMoviesData(`${moviesUrl}${id}?${apiKey}`)
             setTimeout(() => {
             }, 500);
         }, []);
@@ -22,7 +24,33 @@ export const API = {
         const getCurrencyMoviesData = async (url: RequestInfo | URL) => {
             const res = await fetch(url);
             const data = await res.json();
-            setMovieData(data.results);
+            setMovieData(data);
+        };
+
+        return moviesData;
+    },
+
+    getMovies: (page: any) => {
+
+        const [moviesData, setMovieData] = useState([]);
+
+        useEffect(() => {
+            getCurrencyMoviesData()
+            setTimeout(() => {
+            }, 500);
+        }, []);
+
+        const getCurrencyMoviesData = async () => {
+            let res
+            if (page) {
+                res = await fetch(`${moviesList}?${apiKey}&${page}`);
+                const data = await res.json();
+                setMovieData(data);
+            } else {
+                res = await fetch(`${moviesList}?${apiKey}`);
+                const data = await res.json();
+                setMovieData(data.results);
+            }
         };
 
         return moviesData;
@@ -91,7 +119,7 @@ export const API = {
         return movieImage + img;
     },
 
-    getGenreList: () =>{
+    getGenreList: () => {
         const [moviesGenreList, setmoviesGenreList] = useState([]);
 
         useEffect(() => {
@@ -114,16 +142,16 @@ export const API = {
 
         const [movies, setMovies] = useState([]);
         const query = searchParams.get("q");
-      
+
         useEffect(() => {
-          const searchWithQueryURL = `${movieSearch}?${apiKey}&query=${query}`;
-          getSearchedMovies(searchWithQueryURL);
+            const searchWithQueryURL = `${movieSearch}?${apiKey}&query=${query}`;
+            getSearchedMovies(searchWithQueryURL);
         }, [query]);
-      
+
         const getSearchedMovies = async (url: RequestInfo | URL) => {
-          const res = await fetch(url);
-          const data = await res.json();
-          setMovies(data.results);
+            const res = await fetch(url);
+            const data = await res.json();
+            setMovies(data.results);
         };
 
         return movies;

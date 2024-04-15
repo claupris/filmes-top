@@ -18,6 +18,7 @@ const Header = () => {
         e.preventDefault()
         if (!busca) return
         navigate(`/search?q=${busca}`)
+        setBusca("")
     };
 
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -33,7 +34,7 @@ const Header = () => {
     return (
         <nav id="navbar">
             <h2>
-                <Link to='/'><VideoCameraBackOutlinedIcon sx={{ color: "#f7d354" }} /><b>Top Movies</b></Link>
+                <Link to='/'><VideoCameraBackOutlinedIcon sx={{ color: "#f7d354" }} /><b>TOP MOVIES</b></Link>
             </h2>
             <Button
                 variant="contained"
@@ -74,9 +75,9 @@ const Header = () => {
                 ))}
             </Menu>
             <form onSubmit={handleKeyPress}>
-                <Box sx={{ display: 'flex', alignItems: 'flex-end', color: 'white', marginTop: "-20px" }}>
-                    <MovieFilterOutlinedIcon sx={{ color: '#f7d354', mr: 1, my: 0.5 }} />
-                    <TextField value={busca} onChange={(e) => setBusca(e.target.value)} id="input-with-sx" label="Busque um filme" label-color="white" variant="standard" color='warning' />
+                <Box sx={{ display: 'flex', alignItems: 'flex-end', color: 'white', marginTop: "-20px", marginRight: "20px"}}>
+                    <MovieFilterOutlinedIcon sx={{ color: '#f7d354', mr: 2, my: 0.5 }} />
+                    <TextField value={busca} onChange={(e) => setBusca(e.target.value)} id="input-with-sx" label="Search" variant="standard" color='warning' />
                 </Box>
             </form>
         </nav>

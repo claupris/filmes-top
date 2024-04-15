@@ -1,0 +1,13 @@
+.movie-card {
+    width: 20%;
+    color: #fff;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: transparent !important; 
+    padding: 2rem;
+    border: 5px solid #c0c0c057;
+    border-radius: 30px;
+    margin-right: 3vh;
+}
